@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack/prod.js ",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server --config webpack/base.js --open"
   },
   "repository": {
@@ -17,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/photonstorm/phaser3-project-template/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+  "homepage": "https://timinis.github.io/phaser-rpg",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
@@ -34,6 +36,7 @@
     "ts-loader": "^6.0.1"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "phaser": "^3.16.2",
     "typescript": "^3.4.5"
   }

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import CST from '../CST.js';
+import tower from '../assets/tower.jpeg';
 
 export class LoadScene extends Phaser.Scene {
   constructor() {
@@ -12,7 +13,7 @@ export class LoadScene extends Phaser.Scene {
   preload() {
     this.load.audio('title-song', './src/assets/title-song.mp3');
     this.load.image('tower', './src/assets/tower.jpeg');
-    this.load.image('title', './src/assets/title.png');
+    this.load.image('title', tower);
     this.load.image('play', './src/assets/play.png');
     this.load.spritesheet('bat', './src/assets/bat.png', {
       frameHeight: 32,
