@@ -1,5 +1,10 @@
 import Phaser from 'phaser';
 import CST from '../CST.js';
+import character from '../assets/dungeon/character.png';
+import characterBack from '../assets/dungeon/characterBack.png';
+import tile from '../assets/dungeon/tile.png';
+import monster from '../assets/dungeon/monster.png';
+import sky from '../assets/sky.gif';
 import * as MapGenerator from '../library/mapGeneration.ts';
 
 export class PlayLoadScene extends Phaser.Scene {
@@ -12,27 +17,23 @@ export class PlayLoadScene extends Phaser.Scene {
   init() {}
 
   preload() {
-    this.load.spritesheet('character', './src/assets/dungeon/character.png', {
+    this.load.spritesheet('character', character, {
       frameHeight: 32,
       frameWidth: 32
     });
-    this.load.spritesheet(
-      'characterBack',
-      './src/assets/dungeon/characterBack.png',
-      {
-        frameHeight: 32,
-        frameWidth: 32
-      }
-    );
-    this.load.spritesheet('monster', './src/assets/dungeon/monster.png', {
+    this.load.spritesheet('characterBack', characterBack, {
       frameHeight: 32,
       frameWidth: 32
     });
-    this.load.spritesheet('tile', './src/assets/dungeon/tile.png', {
+    this.load.spritesheet('monster', monster, {
       frameHeight: 32,
       frameWidth: 32
     });
-    this.load.image('sky', './src/assets/sky.gif');
+    this.load.spritesheet('tile', tile, {
+      frameHeight: 32,
+      frameWidth: 32
+    });
+    this.load.image('sky', sky);
 
     this.mapInfo.generated = MapGenerator.phaserGridGenerator(
       this.mapInfo.size[0],
